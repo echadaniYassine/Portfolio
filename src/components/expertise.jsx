@@ -8,25 +8,30 @@ import "../style/components/skills.css";
 
 const skillsData = [
   {
-    category: "Front-End",
+    category: "Languages",
     skills: [
-      { name: "ReactJS", icon: <FaReact /> },
       { name: "HTML5", icon: <FaHtml5 /> },
       { name: "CSS3", icon: <FaCss3Alt /> },
       { name: "JavaScript", icon: <FaJs /> },
-      { name: "Bootstrap", icon: <FaBootstrap /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> }
+      { name: "PHP", icon: <FaLaravel /> },
     ]
   },
   {
-    category: "Back-End",
+    category: "Freamworks",
     skills: [
       { name: "Express.js", icon: <SiExpress /> },
       { name: "Node.js", icon: <FaNodeJs /> },
-      { name: "PHP/Laravel", icon: <FaLaravel /> },
+      { name: "Laravel", icon: <FaLaravel /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "Bootstrap", icon: <FaBootstrap /> },
+      { name: "ReactJS", icon: <FaReact /> },
+    ]
+  },
+  {
+    category: "DataBase",
+    skills: [
       { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "MySQL", icon: <SiMysql /> },
-      { name: "Firebase", icon: <SiFirebase /> }
+      { name: "SQL", icon: <SiMysql /> },
     ]
   },
   {
@@ -49,7 +54,7 @@ const skillsData = [
 export default function Expertise() {
   return (
     <div id="expertise" className="skills-container">
-      <h2 className="skills-title">S k i l l s</h2>
+      <h2 className="skills-title">Skills</h2>
       {skillsData.map((section, index) => (
         <div key={index} className="skills-section">
           <h3 className="skills-category">{section.category}</h3>

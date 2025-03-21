@@ -1,78 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "../style/components/hero.css";
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 
 export default function Home() {
-    const [hoverText, setHoverText] = useState({});
-
-
     const names = [
         { text: "Yassine", color: "orange" },
-        { text: "Echadani", color: "red" }
-    ]; // Names and their respective colors
-    const [currentNameIndex, setCurrentNameIndex] = useState(0); // Index of the current name
-    const [displayName, setDisplayName] = useState(""); // Current displayed text
-    const [isRemoving, setIsRemoving] = useState(false); // Whether the text is being removed
+        { text: "Echadani", color: "red" },
+    ];
+
+    const socialLinks = [
+        { href: "https://www.facebook.com/profile.php?id=61572773007779#", icon: <FaFacebookF />, label: "Facebook" },
+        { href: "https://www.instagram.com/oky_webcraft/", icon: <FaInstagram />, label: "Instagram" },
+        { href: "https://www.linkedin.com/company/106179526", icon: <FaLinkedinIn />, label: "LinkedIn" },
+        { href: "https://wa.me/+212717923103", icon: <FaWhatsapp />, label: "WhatsApp" },
+    ];
+
+    const [currentNameIndex, setCurrentNameIndex] = useState(0);
+    const [displayName, setDisplayName] = useState("");
+    const [isRemoving, setIsRemoving] = useState(false);
+    const [hoverText, setHoverText] = useState({ contact: "Contact Me", cv: "Download CV" });
 
     useEffect(() => {
-        let interval;
-        let index = isRemoving ? names[currentNameIndex].text.length : -1; // Start at full length if removing
+        let index = isRemoving ? names[currentNameIndex].text.length : 0;
+        let interval = setInterval(() => {
+            setDisplayName((prev) => isRemoving ? prev.slice(0, -1) : names[currentNameIndex].text.slice(0, index + 1));
+            index = isRemoving ? index - 1 : index + 1;
 
-        const animate = () => {
-            interval = setInterval(() => {
-                if (isRemoving) {
-                    // Removing text
-                    setDisplayName((prev) => prev.slice(0, -1));
-                    index--;
+            if (index < 0 || index > names[currentNameIndex].text.length) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    setIsRemoving(!isRemoving);
+                    if (!isRemoving) setCurrentNameIndex((prev) => (prev + 1) % names.length);
+                }, 1000);
+            }
+        }, 100);
 
-                    // When fully removed, switch to next name
-                    if (index < 0) {
-                        clearInterval(interval);
-                        setIsRemoving(false);
-                        setCurrentNameIndex((prev) => (prev + 1) % names.length);
-                    }
-                } else {
-                    // Generating text
-                    setDisplayName((prev) => prev + names[currentNameIndex].text.charAt(index));
-                    index++;
-
-                    // When fully generated, start removing after a delay
-                    if (index >= names[currentNameIndex].text.length) {
-                        clearInterval(interval);
-                        setTimeout(() => setIsRemoving(true), 1000); // Delay before removing
-                    }
-                }
-            }, 100); // Speed of typing/removing
-        };
-
-        animate();
-
-        return () => clearInterval(interval); // Cleanup interval on unmount
+        return () => clearInterval(interval);
     }, [isRemoving, currentNameIndex]);
-
-    const startTypingEffect = (button, text) => {
-        let index = -1;
-        setHoverText((prev) => ({ ...prev, [button]: "" })); // Clear previous text
-
-        const interval = setInterval(() => {
-            setHoverText((prev) => ({
-                ...prev,
-                [button]: prev[button] + text.charAt(index), // Update text for current button
-            }));
-            index++;
-
-            if (index >= text.length) clearInterval(interval);
-        }, 100); // Adjust speed here (100ms per letter)
-    };
 
     return (
         <div className="home-container">
             <section className="hero">
                 <div className="hero-text">
-                    <h1
-                        className="name"
-                        style={{ color: names[currentNameIndex].color }}
-                    ><span style={{ color: "black" }}>Hi I`m </span>{displayName}
+                    <h1 className="name" style={{ color: names[currentNameIndex].color }}>
+                        <span style={{ color: "black" }}>Hi I'm </span>{displayName}
                     </h1>
                     <h2 className="username">Web Developer</h2>
                     <p className="paragraphe">
@@ -83,34 +55,27 @@ export default function Home() {
                     <div className="cta-buttons">
                         {/* Contact Me Button */}
                         <button
-                            onMouseEnter={() => startTypingEffect("contact", "Contact Me")}
-                            onMouseLeave={() => setHoverText((prev) => ({ ...prev, contact: "" }))}
+                            onMouseEnter={() => setHoverText({ ...hoverText, contact: "Contact Me" })}
                         >
-                            {hoverText.contact ? hoverText.contact : "Contact Me"}
+                            {hoverText.contact}
                         </button>
 
                         {/* Download CV Button */}
                         <button
-                            onMouseEnter={() => startTypingEffect("cv", "Download CV")}
-                            onMouseLeave={() => setHoverText((prev) => ({ ...prev, cv: "" }))}
+                            onMouseEnter={() => setHoverText({ ...hoverText, cv: "Download CV" })}
                         >
-                            {hoverText.cv ? hoverText.cv : (
-                                <a
-                                    href="/cv.pdf"
-                                    download="Echadani_Yassine_CV.pdf"
-                                    style={{ textDecoration: 'none', color: 'inherit' }}
-                                >
-                                    Download CV
-                                </a>
-                            )}
+                            <a href="/cv.pdf" download="Echadani_Yassine_CV.pdf" className="download-link">
+                                {hoverText.cv}
+                            </a>
                         </button>
                     </div>
+
                     <div className="social-icons">
-                        <a href="https://github.com/yassine14522" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <FaGithub size={30} style={{ color: 'orange', margin: '0 10px' }} />
+                        <a href="https://github.com/yassine14522" target="_blank" rel="noopener noreferrer">
+                            <FaGithub size={30} className="icon" />
                         </a>
-                        <a href="https://www.linkedin.com/in/yassine-echadani-5904b8268" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <FaLinkedin size={30} style={{ color: 'orange', margin: '0 10px' }} />
+                        <a href="https://www.linkedin.com/in/yassine-echadani-5904b8268" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin size={30} className="icon" />
                         </a>
                     </div>
                 </div>

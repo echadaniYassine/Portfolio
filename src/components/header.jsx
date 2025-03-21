@@ -1,13 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../style/components/header.css";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 
-const socialLinks = [
-  { href: "https://www.facebook.com/profile.php?id=61572773007779#", icon: <FaFacebookF />, label: "Facebook" },
-  { href: "https://www.instagram.com/oky_webcraft/", icon: <FaInstagram />, label: "Instagram" },
-  { href: "https://www.linkedin.com/company/106179526", icon: <FaLinkedinIn />, label: "LinkedIn" },
-  { href: "https://wa.me/+212717923103", icon: <FaWhatsapp />, label: "WhatsApp" },
-];
 
 const navItems = [
   { path: "/", label: "Home" },
@@ -22,10 +15,6 @@ const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const navRef = useRef(null);
 
-  const toggleNav = (e) => {
-    e.stopPropagation();
-    setIsNavOpen((prev) => !prev);
-  };
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -42,12 +31,6 @@ const Header = () => {
         <img src="assets/logo.png" className="imageLogo" alt="OKY Logo" />
       </a>
 
-      <div className="hamburger" onClick={toggleNav}>
-        {[...Array(3)].map((_, i) => (
-          <div key={i} className={`bar ${isNavOpen ? "active" : ""}`} />
-        ))}
-      </div>
-
       <nav ref={navRef} className={`navigation ${isNavOpen ? "nav-open" : ""}`} onClick={(e) => e.stopPropagation()}>
         <ul className="nav-list">
           {navItems.map(({ path, label }) => (
@@ -58,21 +41,6 @@ const Header = () => {
             </li>
           ))}
         </ul>
-
-        {/* Mobile Extra Content */}
-        <div className="mobile-extra">
-          <div className="numPhone">+212 601710479</div>
-          <img src="assets/logoMobill.png" className="imageLogoMobill" alt="OKY Logo" />
-          <ul className="header-links">
-            {socialLinks.map(({ href, icon, label }, index) => (
-              <li key={index}>
-                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="header-link">
-                  {icon}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
       </nav>
     </header>
   );
