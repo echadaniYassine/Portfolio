@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from "react";
-import "../style/components/hero.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
     const names = [
-        { text: "Yassine", color: "orange" },
-        { text: "Echadani", color: "red" },
+        { text: "Yassine", color: "text-orange-500" },
+        { text: "Echadani", color: "text-red-500" },
     ];
 
     const socialLinks = [
+        { href: "https://www.linkedin.com/company/106179526", icon: <FaLinkedinIn />, label: "LinkedIn" },
+        { href: "https://github.com/echadaniyassine", icon: <FaGithub />, label: "Github" },
         { href: "https://www.facebook.com/profile.php?id=61572773007779#", icon: <FaFacebookF />, label: "Facebook" },
         { href: "https://www.instagram.com/oky_webcraft/", icon: <FaInstagram />, label: "Instagram" },
-        { href: "https://www.linkedin.com/company/106179526", icon: <FaLinkedinIn />, label: "LinkedIn" },
         { href: "https://wa.me/+212717923103", icon: <FaWhatsapp />, label: "WhatsApp" },
     ];
 
     const [currentNameIndex, setCurrentNameIndex] = useState(0);
     const [displayName, setDisplayName] = useState("");
     const [isRemoving, setIsRemoving] = useState(false);
-    const [hoverText, setHoverText] = useState({ contact: "Contact Me", cv: "Download CV" });
 
     useEffect(() => {
         let index = isRemoving ? names[currentNameIndex].text.length : 0;
         let interval = setInterval(() => {
-            setDisplayName((prev) => isRemoving ? prev.slice(0, -1) : names[currentNameIndex].text.slice(0, index + 1));
+            setDisplayName((prev) =>
+                isRemoving ? prev.slice(0, -1) : names[currentNameIndex].text.slice(0, index + 1)
+            );
             index = isRemoving ? index - 1 : index + 1;
 
             if (index < 0 || index > names[currentNameIndex].text.length) {
@@ -40,54 +40,66 @@ export default function Home() {
     }, [isRemoving, currentNameIndex]);
 
     return (
-        <div className="home-container">
-            <section className="hero">
-                <div className="hero-text">
-                    <h1 className="name" style={{ color: names[currentNameIndex].color }}>
-                        <span style={{ color: "black" }}>Hi I'm </span>{displayName}
+        <div className="flex justify-center items-center px-5 py-12 mx-auto max-w-6xl">
+            <section className="flex flex-col md:flex-row items-center w-full gap-10">
+                {/* Left Content */}
+                <div className="text-left md:w-1/2 space-y-6">
+                    <h1 className={`text-5xl md:text-7xl font-bold ${names[currentNameIndex].color}`}>
+                        <span className="text-black">Hi, I'm </span>{displayName}
                     </h1>
-                    <h2 className="username">Web Developer</h2>
-                    <p className="paragraphe">
+                    <h2 className="text-3xl md:text-4xl font-bold text-orange-500 animate-pulse">
+                        Web Developer
+                    </h2>
+                    <p className="text-gray-600 text-lg">
                         I am a passionate web developer skilled in modern technologies like React, Node.js,
                         and more. Let's build something amazing together!
                     </p>
 
-                    <div className="cta-buttons">
-                        {/* Contact Me Button */}
-                        <button
-                            onMouseEnter={() => setHoverText({ ...hoverText, contact: "Contact Me" })}
-                        >
-                            {hoverText.contact}
+                    {/* Buttons */}
+                    <div className="flex gap-6 mt-5">
+                        <button className="bg-black text-white px-6 py-3 rounded-xl hover:bg-orange-500 transition">
+                            Contact Me
                         </button>
-
-                        {/* Download CV Button */}
-                        <button
-                            onMouseEnter={() => setHoverText({ ...hoverText, cv: "Download CV" })}
+                        <a
+                            href="/cv.pdf"
+                            download="Echadani_Yassine_CV.pdf"
+                            className="bg-gradient-to-r from-black to-orange-500 text-white px-6 py-3 rounded-xl hover:opacity-90 transition"
                         >
-                            <a href="/cv.pdf" download="Echadani_Yassine_CV.pdf" className="download-link">
-                                {hoverText.cv}
+                            Download CV
+                        </a>
+                    </div>
+
+                    {/* Social Icons */}
+                    <div className="flex space-x-5 mt-6">
+                        {socialLinks.map(({ href, icon, label }, index) => (
+                            <a
+                                key={index}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={label}
+                                className="text-orange-500 text-2xl hover:scale-110 transition"
+                            >
+                                {icon}
                             </a>
-                        </button>
-                    </div>
-
-                    <div className="social-icons">
-                        <a href="https://github.com/yassine14522" target="_blank" rel="noopener noreferrer">
-                            <FaGithub size={30} className="icon" />
-                        </a>
-                        <a href="https://www.linkedin.com/in/yassine-echadani-5904b8268" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin size={30} className="icon" />
-                        </a>
+                        ))}
                     </div>
                 </div>
 
-                <div className="hero-image">
-                    <img src="assets/photo.jpg" alt="Profile" className="profile-image" />
-                </div>
-
-                <div className="arrow-container">
-                    <span className="arrow">&#8595;</span>
+                {/* Right Image Section */}
+                <div className="md:w-1/2 flex justify-center">
+                    <img
+                        src="assets/photo.jpg"
+                        alt="Profile"
+                        className="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full animate-fadeIn"
+                    />
                 </div>
             </section>
+
+            {/* Animated Arrow */}
+            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <span className="text-5xl text-orange-500">&#8595;</span>
+            </div>
         </div>
     );
 }

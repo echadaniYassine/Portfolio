@@ -4,7 +4,6 @@ import {
   FaShopify, FaWordpress, FaDocker
 } from "react-icons/fa";
 import { SiMysql, SiMongodb, SiTailwindcss, SiExpress, SiKubernetes, SiFirebase } from "react-icons/si";
-import "../style/components/skills.css";
 
 const skillsData = [
   {
@@ -17,7 +16,7 @@ const skillsData = [
     ]
   },
   {
-    category: "Freamworks",
+    category: "Frameworks",
     skills: [
       { name: "Express.js", icon: <SiExpress /> },
       { name: "Node.js", icon: <FaNodeJs /> },
@@ -28,7 +27,7 @@ const skillsData = [
     ]
   },
   {
-    category: "DataBase",
+    category: "Databases",
     skills: [
       { name: "MongoDB", icon: <SiMongodb /> },
       { name: "SQL", icon: <SiMysql /> },
@@ -53,16 +52,20 @@ const skillsData = [
 
 export default function Expertise() {
   return (
-    <div id="expertise" className="skills-container">
-      <h2 className="skills-title">Skills</h2>
+    <div id="expertise" className="py-12 px-5 max-w-5xl mx-auto text-center">
+      <h2 className="text-4xl font-bold text-gray-800 mb-10 relative inline-block">
+        Skills
+        <span className="block w-16 h-1 bg-orange-500 rounded-full mx-auto mt-2"></span>
+      </h2>
+
       {skillsData.map((section, index) => (
-        <div key={index} className="skills-section">
-          <h3 className="skills-category">{section.category}</h3>
-          <div className="skills-list">
+        <div key={index} className="mb-12">
+          <h3 className="text-2xl font-semibold text-gray-700 uppercase mb-6">{section.category}</h3>
+          <div className="flex flex-wrap justify-center gap-6">
             {section.skills.map((skill, idx) => (
-              <div key={idx} className="skill">
-                <div className="skill-icon">{skill.icon}</div>
-                <p>{skill.name}</p>
+              <div key={idx} className="w-32 h-32 flex flex-col items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-2">
+                <div className="text-4xl text-orange-500">{skill.icon}</div>
+                <p className="text-lg font-semibold text-gray-700 mt-3">{skill.name}</p>
               </div>
             ))}
           </div>
