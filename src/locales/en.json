@@ -1,0 +1,72 @@
+{
+  "sidebar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Yassine",
+    "title": "Creative Full Stack Developer",
+    "subtitle": "Driven by clean code and real impact.",
+    "getProject": "Get a Project?",
+    "letsTalk": "Let's talk"
+  },
+  "about": {
+    "title": "NICE TO MEET YOU!",
+    "name": "Echadani Yassine",
+    "role": "Web & mobile Developer",
+    "bio": "I'm Echadani Yassine, a Full Stack Developer from Temara, Morocco, skilled in JavaScript (React, Node.js) and PHP (Laravel). I build responsive web and mobile apps, with experience in e-commerce, CMS (WordPress, PrestaShop), and MERN stack and Laravel projects. Passionate about clean code, Agile practices, and continuous learning.",
+    "experience": "+2 Experience",
+    "projects": "+20 Projects",
+    "technologies": "+12 Technologies"
+  },
+  "experience": {
+    "title": "Everything about me!",
+    "education1_title": "Baccalauréat Scientifique (SVT)",
+    "education1_details": "High school diploma in Life and Earth Sciences with a focus on scientific studies.",
+    "education2_title": "Full Stack Web Developer",
+    "education2_details": "A comprehensive Full Stack Web Development diploma program covering front-end and back-end technologies, databases, and agile methodologies.",
+    "work1_title": "Full Stack Web Developer Intern",
+    "work1_details": "Contributed to real-world web development projects, including interactive ReactJS landing pages, dynamic PhaserJS games, Shopify stores, and full MERN stack e-commerce applications.",
+    "work2_title": "Web Developer Intern",
+    "work2_details": "Working on PHP Laravel-based applications and developing websites using CMS platforms including WordPress and PrestaShop. Focused on building scalable, maintainable web solutions and customizing CMS themes and plugins."
+  },
+  "services": {
+    "title": "My Skills!",
+    "webDev_title": "Custom Web Development",
+    "webDev_desc": "Tailor-made websites built from scratch using modern technologies like Laravel, React, and Node.js.",
+    "cms_title": "CMS Website Creation",
+    "cms_desc": "Professional websites developed using WordPress and PrestaShop, including theme customization and plugin integration.",
+    "ecommerce_title": "E-commerce Development",
+    "ecommerce_desc": "Secure and responsive online stores built with Laravel, PrestaShop, or Shopify, optimized for user experience and conversions.",
+    "api_title": "API Integration & Development",
+    "api_desc": "Development and integration of RESTful APIs to connect applications and enable seamless data flow.",
+    "maintenance_title": "Website Maintenance & Optimization",
+    "maintenance_desc": "Ongoing support, performance enhancements, bug fixing, and SEO improvements for existing websites.",
+    "uiux_title": "UI/UX Design Implementation",
+    "uiux_desc": "Responsive and user-friendly interfaces developed from Figma or custom designs using HTML, Tailwind CSS, and JavaScript.",
+    "contactNow": "Contact Now"
+  },
+  "projects": {
+    "title": "Recent Complited Works!",
+    "viewAll": "View All Projects"
+  },
+  "testimonials": {
+    "title": "What Collaborators Say?",
+    "testimonial1": "Working with Yassine on the DonatBlood project was a game-changer. He took our vision and turned it into a scalable, well-structured Laravel backend using React. His problem-solving skills and dedication to quality are second to none.",
+    "name1": "Amina S",
+    "role1": "NGO Project Manager"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "I'm currently available to take on new projects, so feel free to send me a message about anything that you want to run past me. You can contact me anytime 24/7.",
+    "form_name": "Enter Your Name",
+    "form_email": "Email",
+    "form_message": "Write what do want..",
+    "submit": "Submit Now"
+  }
+}

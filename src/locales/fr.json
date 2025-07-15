@@ -1,0 +1,72 @@
+{
+  "sidebar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "hero": {
+    "greeting": "Salut, je suis Yassine",
+    "title": "Développeur Full Stack Créatif",
+    "subtitle": "Guidé par un code propre et un impact réel.",
+    "getProject": "Obtenir un Projet ?",
+    "letsTalk": "Discutons"
+  },
+  "about": {
+    "title": "RAVI DE VOUS RENCONTRER !",
+    "name": "Echadani Yassine",
+    "role": "Développeur Web & mobile",
+    "bio": "Je suis Echadani Yassine, un développeur Full Stack de Temara, Maroc, compétent en JavaScript (React, Node.js) et PHP (Laravel). Je crée des applications web et mobiles réactives, avec une expérience en e-commerce, CMS (WordPress, PrestaShop), et sur les stacks MERN et Laravel. Passionné par le code propre, les pratiques Agiles et l'apprentissage continu.",
+    "experience": "+2 Expérience",
+    "projects": "+20 Projets",
+    "technologies": "+12 Technologies"
+  },
+  "experience": {
+    "title": "Tout sur moi !",
+    "education1_title": "Baccalauréat Scientifique (SVT)",
+    "education1_details": "Diplôme du baccalauréat en Sciences de la Vie et de la Terre avec une spécialisation en études scientifiques.",
+    "education2_title": "Développeur Web Full Stack",
+    "education2_details": "Un programme diplômant complet en développement Web Full Stack couvrant les technologies front-end et back-end, les bases de données et les méthodologies agiles.",
+    "work1_title": "Stagiaire Développeur Full Stack",
+    "work1_details": "Contribué à des projets de développement web réels, y compris des pages d'atterrissage interactives en ReactJS, des jeux dynamiques en PhaserJS, des boutiques Shopify et des applications e-commerce complètes avec la stack MERN.",
+    "work2_title": "Stagiaire Développeur Web",
+    "work2_details": "Travail sur des applications basées sur PHP Laravel et développement de sites web avec des plateformes CMS comme WordPress et PrestaShop. Axé sur la création de solutions web évolutives et maintenables et la personnalisation de thèmes et plugins CMS."
+  },
+  "services": {
+    "title": "Mes Compétences !",
+    "webDev_title": "Développement Web Personnalisé",
+    "webDev_desc": "Sites web sur mesure construits à partir de zéro en utilisant des technologies modernes comme Laravel, React et Node.js.",
+    "cms_title": "Création de Sites Web CMS",
+    "cms_desc": "Sites web professionnels développés avec WordPress et PrestaShop, y compris la personnalisation de thèmes et l'intégration de plugins.",
+    "ecommerce_title": "Développement E-commerce",
+    "ecommerce_desc": "Boutiques en ligne sécurisées et réactives construites avec Laravel, PrestaShop ou Shopify, optimisées pour l'expérience utilisateur et les conversions.",
+    "api_title": "Intégration & Développement d'API",
+    "api_desc": "Développement et intégration d'API RESTful pour connecter des applications et permettre un flux de données fluide.",
+    "maintenance_title": "Maintenance & Optimisation de Site Web",
+    "maintenance_desc": "Support continu, améliorations de performance, correction de bugs et améliorations SEO pour les sites web existants.",
+    "uiux_title": "Implémentation de Design UI/UX",
+    "uiux_desc": "Interfaces réactives et conviviales développées à partir de maquettes Figma ou de designs personnalisés en utilisant HTML, Tailwind CSS et JavaScript.",
+    "contactNow": "Contactez-moi"
+  },
+  "projects": {
+    "title": "Travaux Récents Complétés !",
+    "viewAll": "Voir Tous les Projets"
+  },
+  "testimonials": {
+    "title": "Ce que disent les collaborateurs ?",
+    "testimonial1": "Travailler avec Yassine sur le projet DonatBlood a changé la donne. Il a pris notre vision et l'a transformée en un backend Laravel évolutif et bien structuré utilisant React. Ses compétences en résolution de problèmes et son dévouement à la qualité sont sans égal.",
+    "name1": "Amina S",
+    "role1": "Chef de Projet ONG"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Je suis actuellement disponible pour de nouveaux projets, alors n'hésitez pas à m'envoyer un message sur tout ce que vous souhaitez me soumettre. Vous pouvez me contacter à tout moment 24/7.",
+    "form_name": "Entrez votre Nom",
+    "form_email": "Email",
+    "form_message": "Écrivez ce que vous voulez..",
+    "submit": "Envoyer Maintenant"
+  }
+}
