@@ -1,3 +1,4 @@
+//next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // The i18n block has been removed.

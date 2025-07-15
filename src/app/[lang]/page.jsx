@@ -8,7 +8,8 @@ import Projects from '@/components/sections/Projects';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
 
-export default async function Home({ params: { lang } }) {
+export default async function Home({ params }) { // 1. Accept the whole params object
+  const lang = params.lang;                    // 2. Get lang from it on the next line
   const dictionary = await getDictionary(lang);
 
   return (
@@ -18,7 +19,7 @@ export default async function Home({ params: { lang } }) {
       <Experience dictionary={dictionary.experience} />
       <Services dictionary={dictionary.services} />
       <Projects dictionary={dictionary.projects} />
-      <Testimonials dictionary={dictionary.testimonials} />
+      {/* <Testimonials dictionary={dictionary.testimonials} /> */}
       <Contact dictionary={dictionary.contact} />
     </div>
   );
