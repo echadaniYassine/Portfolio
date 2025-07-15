@@ -4,7 +4,7 @@ const Hero = ({ dictionary }) => (
       <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
         {dictionary.greeting.split(' ').slice(0, 3).join(' ')} <span className="text-primary dark:text-dark-primary">Yassine</span>
         <br />
-        This is Coder
+        This is Codervv
       </h1>
       <p className="text-lg text-foreground/70 dark:text-dark-foreground/70 max-w-lg mx-auto md:mx-0">{dictionary.subtitle}</p>
       <div className="flex justify-center md:justify-start space-x-4 pt-4">
