@@ -26,8 +26,7 @@ export default function SkillsSection({ t }) {
       </div>
       
       {/* Content with proper container */}
-      <div className="w-full relative z-10">
-        <div className="container mx-auto">
+        <div className="container mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-aurora">
               {t.skills_title || 'Compétences'}
@@ -38,7 +37,7 @@ export default function SkillsSection({ t }) {
             </p>
           </div>
           
-          <div className="max-w-5xl mx-auto">
+          <div className="mx-auto">
             {skills.length > 0 ? (
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6">
                 {skills.map((skill, index) => (
@@ -68,7 +67,6 @@ export default function SkillsSection({ t }) {
             )}
           </div>
         </div>
-      </div>
     </section>
   )
 }

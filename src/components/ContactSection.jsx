@@ -10,9 +10,8 @@ export default function ContactSection({ t }) {
       </div>
       
       {/* Content with proper container */}
-      <div className="w-full relative z-10">
-        <div className="container mx-auto text-center">
-          <div className="max-w-4xl mx-auto animate-fade-in">
+        <div className="container mx-auto text-center relative z-10">
+          <div className="mx-auto animate-fade-in">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-aurora">
               {t?.contact_title || 'Contact'}
             </h2>
@@ -52,7 +51,6 @@ export default function ContactSection({ t }) {
             </div>
           </div>
         </div>
-      </div>
     </section>
   )
 }

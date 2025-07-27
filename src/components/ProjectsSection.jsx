@@ -30,7 +30,7 @@ export default function ProjectsSection({ t }) {
             </p>
           </div>
           
-          <div className="max-w-6xl mx-auto">
+          <div className="mx-auto">
             {projects.length > 0 ? (
               <div className="grid md:grid-cols-2 gap-8">
                 {projects.map((project, index) => (

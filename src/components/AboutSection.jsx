@@ -8,7 +8,6 @@ export default function AboutSection({ t }) {
       {/* Content with proper container */}
       <div className="w-full">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-primary">
                 {t?.about_title || 'À propos de moi'}
@@ -51,7 +50,6 @@ export default function AboutSection({ t }) {
             </div>
           </div>
         </div>
-      </div>
     </section>
   )
 }
