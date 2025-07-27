@@ -1,0 +1,20 @@
+{
+  "hero_title": "Welcome to my Portfolio",
+  "about_title": "About Me",
+  "about_description": "I'm a passionate developer from Morocco, specializing in modern web and mobile apps.",
+  "skills_title": "Skills",
+  "skills": ["React", "Next.js", "Node.js", "MongoDB", "Laravel", "Flutter"],
+  "projects_title": "Projects",
+  "contact_title": "Contact",
+  "contact_description": "You can reach me by email at:",
+  "projects": [
+    {
+      "title": "E-commerce MERN",
+      "description": "A full-featured e-commerce site built with React and Node.js"
+    },
+    {
+      "title": "Portfolio OKY",
+      "description": "Professional portfolio with Next.js and Tailwind CSS"
+    }
+  ]
+}
